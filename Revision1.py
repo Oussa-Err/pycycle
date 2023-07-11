@@ -1,5 +1,6 @@
 from Revision import Vehicule
 
+
 class Voiture(Vehicule):
     def __init__(self, modele, marque, anne, nombre_portes):
         super().__init__(modele, marque, anne)
@@ -17,10 +18,6 @@ class Voiture(Vehicule):
 
     def __str__(self):
         return super().__str__() + '\t' + str(self.__nombre_portes)
-
-
-
-
 
 
 class Camion(Vehicule):
@@ -41,9 +38,5 @@ class Camion(Vehicule):
     def __str__(self):
         return super().__str__() + '\t' + str(self.__charge_max)
 
-    @staticmethod(counter)
-    def counter(cls):
-        print('')
-
-
-    @classmethod(f)
+    def show(self):
+        print(self)
