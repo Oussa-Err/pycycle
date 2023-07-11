@@ -46,5 +46,4 @@ class Client:
         return self.__telephone
 
     def __str__(self):
-        return str(self.__id) + '\t' + self.__nom  + '\t' + self.__prenom + '\t' + str(self.__telephone)
-
+        return str(self.__id) + '\t' + self.__nom + '\t' + self.__prenom + '\t' + str(self.__telephone)

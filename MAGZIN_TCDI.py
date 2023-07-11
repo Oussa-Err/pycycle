@@ -31,8 +31,8 @@ class Magazin:
 
     def find(self, id):
         match = None
-        for produit in self.prod:
-            if produit.getId() == id:
+        for product in self.prod:
+            if product.getId() == id:
                 match = True
                 break
             return match
@@ -46,5 +46,4 @@ class Magazin:
         self.__prod = pickle.load(file)
         file.close()
 
-
-
+# if __name__=='__main__':

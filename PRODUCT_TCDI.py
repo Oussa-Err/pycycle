@@ -1,9 +1,10 @@
 class Product:
     def __init__(self, path, price):
         id = Product.auto
+        id += 1
         self.setId(id)
         self.setPath(path)
-        self.price(price)
+        self.setPrice(price)
 
     auto = 0
 
