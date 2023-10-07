@@ -5,13 +5,13 @@ class User:
 
   def setLogin(self,login):
         if len(login)>0:
-            self.__login=login
+            self.__login = login
         else:
             raise Exception("login valide")
         
   def setPwd(self,pwd):
      if len(pwd)>0:
-        self.__pwd=pwd
+        self.__pwd = pwd
      else:
          raise Exception("pwd valide")
      
