@@ -1,21 +1,14 @@
 from user import User
-class formateur (User):
+class Formateur(User):
     def __init__(self,login,pwd,matricule):
-        super(login,pwd)
-        self.setMatricule(matricule)
-
-    def setMatricule(self,matricule):
-        if matricule > 0:
-         self.__matricule = matricule
-
-    def getMatricule(self):
-       return self.__matricule
-    
+         super().__init__(login,pwd)
+         self.setMatricule(matricule)
+    def setMatricule(self,marticule):
+        if len(marticule)>0:
+            self.__matricule=marticule
+        else :
+            raise Exception("matricule vide")
     def __str__(self):
-       return super().__str__() + '\t' + str(self.__matricule)
-
-        
-
-
-
-    
+        return super.__str__()+'\t'+self.__matricule
+    def afficher(self):
+        print("Interface Formateur")
