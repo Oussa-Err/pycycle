@@ -1,23 +1,25 @@
-class User :
-    def __init__(self,login,pswrd):
+class User:
+    def __init__(self,login,pwd):
         self.setLogin(login)
-        self.setPswrd(pswrd)
+        self.setPwd(pwd)
+    def __str__(self):
+        return self.__login 
+
+    def getLogin(self):
+        return self.__login    
     def setLogin(self,login):
         if len(login)>0:
             self.__login=login
-        else :
-            raise Exception("login vide")
-    def setPswrd(self,pswrd):
-        if len(pswrd)>0:
-            self.__pswrd=pswrd
         else:
-            raise Exception("pswrd vide") 
-    def getLogin(self):
-        return self.__login
-    def getPswrd(self):
-        return self.__pswrd
-    def __str__(self):
-        return self.__login  + '\t' +  self.__pswrd
-    def afficher():
-        pass
-    
+            raise Exception("login vide")
+        
+    def getPwd(self):
+        return self.__pwd
+    def setPwd(self,pwd):
+        if len(pwd)>0:
+            self.__pwd=pwd
+        else:
+            raise Exception("pwd vide") 
+    def afficher(self):
+        print("interface user")
+        
