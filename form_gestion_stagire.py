@@ -3,6 +3,9 @@ import tkinter.messagebox as msg
 import tkinter as tk
 from stagire import Stagire
 from etablissement import Etablissement
+from tkinter import tix
+
+
 class FormGestionStagire:
     def __init__(self):
           self.root=tk.Tk()
@@ -28,7 +31,6 @@ class FormGestionStagire:
           self.entryPWD=tk.Entry(self.frameLableEntry)
           self.entryPWD.grid(row=2,column=1)
 
-
           self.btnAdd=tk.Button(self.frameBUtten,text="add",command=self.add)
           self.btnAdd.grid(row=1,column=0,padx=10)
           self.btnShow=tk.Button(self.frameBUtten,text="show")
@@ -41,13 +43,11 @@ class FormGestionStagire:
           self.btndelete.grid(row=1,column=4,padx=10)
           self.btnserch =tk.Button(self.frameBUtten,text="search",command=self.search)
           self.btnserch.grid(row=1,column=5,padx=10)
-
-        
-    
-
           self.root.mainloop()
+
     def save(self):
          self.etab1.save()
+
     def add(self):
           try:
               self.etab1.ajouter(Stagire(self.entryNumIus.get(),self.entryLogin.get(),self.entryPWD.get()))
@@ -55,15 +55,24 @@ class FormGestionStagire:
               self.entryNumIus.focus()
           except Exception as ex:
               msg.showwarning("warning ",ex)
+
     def clear(self):
          self.entryLogin.delete(0,len(self.entryLogin.get()))
          self.entryNumIus.delete(0,len(self.entryNumIus .get()))
          self.entryPWD.delete(0,len(self.entryPWD.get()))
+
     def search(self):
          FormSearch()
+
     def back(self):
          from form_admin import FormAdmin
          self.root.destroy()
          FormAdmin()
-     def show(self):
-         FormSearch()
+
+    def show(self):
+         window = tix.Tk()
+         window.title('list des stagiaire')
+         window.geometry("300*200")
+         scrolledWindow = tix.ScrolledWindow(window)
+         scrolledWindow.pack(expand=1)
+         tix.BOTH
