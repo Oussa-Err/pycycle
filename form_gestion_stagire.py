@@ -72,7 +72,23 @@ class FormGestionStagire:
     def show(self):
          window = tix.Tk()
          window.title('list des stagiaire')
-         window.geometry("300*200")
+         window.geometry("300x200")
          scrolledWindow = tix.ScrolledWindow(window)
-         scrolledWindow.pack(expand=1)
-         tix.BOTH
+         scrolledWindow.pack(expand=1, fill='both')         
+         i = 0
+         for item in self.etab1.getUsers():
+               if isinstance(item, Stagire):
+                    entry_login = tix.Entry(scrolledWindow.window)
+                    entry_login.grid(row=i, column=0)
+                    entry_login.insert(0, item.getLogin())
+
+                    entry_pwd = tix.Entry(scrolledWindow.window)
+                    entry_pwd.grid(row=i, column=1)
+                    entry_pwd.insert(0, item.getPwd())
+
+                    entry_numI = tix.Entry(scrolledWindow.window)
+                    entry_numI.grid(row=i, column=2)
+                    entry_numI.insert(0, item.getNumIus())
+
+                    i += 1
+         window.mainloop()
